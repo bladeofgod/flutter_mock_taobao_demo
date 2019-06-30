@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mock_taobao_demo/common/style/gzx_style.dart';
 import 'package:flutter_mock_taobao_demo/common/utils/screen_util.dart';
+import 'page/home/home_page.dart';
+import 'page/message/message_page.dart';
+import 'page/my/my_page.dart';
+import 'page/shopping_cart/shopping_cart_page.dart';
+import 'page/weitao/wei_tao_page.dart';
 
 
 class GZXBottomNavigationBar extends StatefulWidget{
@@ -50,7 +55,7 @@ class GZXBottomNavigationBarState extends State<GZXBottomNavigationBar> {
           HomePage(),
           WeiTaoPage(),
           MessagePage(),
-          ShoppingCarPage(),
+          ShoppingCartPage(),
           MyPage(),
         ],
         physics: NeverScrollableScrollPhysics(),
