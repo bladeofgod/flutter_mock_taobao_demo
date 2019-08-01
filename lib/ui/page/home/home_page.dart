@@ -58,7 +58,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin,Automa
     });
   }
 
-  _afterLayout(){
+  _afterLayout(_){
     _getPositions('_keyFilter', _keyFilter);
     _getSizes('_keyFilter', _keyFilter);
   }
@@ -66,6 +66,27 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin,Automa
   _getPositions(log,GlobalKey globalKey){
     RenderBox renderBoxRed = globalKey.currentContext.findRenderObject();
     var positionRed = renderBoxRed.localToGlobal(Offset.zero);
+  }
+
+  _getSizes(log,GlobalKey globalKey){
+    RenderBox renderBoxRed = globalKey.currentContext.findRenderObject();
+    _sizeRed = renderBoxRed.size;
+    setState(() {
+
+    });
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //当前frame 执行不完毕后，会执行callback 回调中的方法
+    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
+
+    AppDao
+
+
   }
 
 
